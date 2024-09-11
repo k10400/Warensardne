@@ -1,0 +1,636 @@
+/* style.css */
+/* style.css */
+@font-face {
+    font-family: 'ModernTypewriter';
+    src: url('modern_typewriter.ttf') format('truetype'); 
+}
+
+body {
+    font-family: 'ModernTypewriter'; /* Apply the custom font to the entire body */
+    margin: 0;
+    padding: 0;
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center; 
+    align-items: center;
+}
+
+/* ... rest of your CSS code ... */
+.centered-section {
+
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text inside the items */
+    margin: 0 auto; /* Center the container itself */
+}
+
+header {
+    text-align: center;
+    position: relative;
+
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    min-height: 450;
+    max-height: 450px; 
+    text-align: center; 
+    filter: drop-shadow(0px 12px 24px rgba(0, 0, 0, 0.9)); /* Increased drop shadow for header image */
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* White text */
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); /* Increased drop shadow for heading */
+    font-weight: bold; /* Make the heading bold */
+    font-family: 'ModernTypewriter', sans-serif; /* Apply the typewriter font */
+}
+
+main {
+    padding: 2rem;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.6)); /* Add a subtle shadow */
+
+}
+
+.button-container {
+    display: flex;
+    align-items: center; /* Center buttons horizontally */
+    gap: 10px; /* Add space between buttons */
+    justify-content: center; /* Centers the buttons vertically in the container */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #111; /* Darker button color */
+    color: white; /* Keep the text color white */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.7)); 
+    margin-bottom: 2rem; 
+}
+
+content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-text {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.section-image {
+    max-width: 800px;
+    max-height:500px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.8)); /* Increased shadow */
+}
+
+.section-content {
+    align-items: center;
+    max-width: 800px;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 5px;
+    background-color: #333; /* Slightly lighter background for sections */
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.8));  
+
+
+
+
+}
+
+.section-content h3 {
+    align-items: center;
+      text-align: center;
+    margin-top: 0;
+    color: #eee; /* Light grey heading color */
+
+
+
+}
+
+footer {
+    background-color: #111; /* Darker footer */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    filter: drop-shadow(0px -4px 6px rgba(0, 0, 0, 0.5)); /* Added drop shadow to footer */
+    font-size: 1em; /* Adjust font size as needed */
+}
+
+footer p {
+    display: inline-block; /* Allow the text to be animated */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    border-right: .15em solid orange; /* Add a blinking cursor effect */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.7)); /* Increased drop shadow for the button */
+    margin-bottom: 2rem; /* Add some space below the button */
+}
+
+.typewriter-text {
+    font-family: monospace; /* Use a monospace font for typewriter effect */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    border-right: .15em solid orange; /* Add a blinking cursor effect */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+
+/* Other styles */
+/* ... previous styles ... */
+
+body {
+    background-color: #181818; /* Dark Gray Background */
+    color: #fff;          /* White Text */
+    font-family: sans-serif;
+    text-align: center; 
+
+}
+
+archive {
+    padding: 2rem;
+    display: flex; /* Use flexbox for the archive section */
+    flex-wrap: wrap; /* Allow items to wrap to multiple rows */
+    justify-content: center; /* Center items horizontally */
+}
+
+.archive-item {
+    width: 250px; /* Adjust width as needed */
+    margin: 1rem; /* Add space between items */
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #282828;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.archive-content {
+    padding: 1rem;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.archive-image {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #555;
+    cursor: pointer;
+}
+
+pdfViewer {
+    position: fixed; /* Make the PDF viewer full-screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Ensure the PDF viewer is on top */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+pdfCanvas {
+    max-width: 80%; /* Adjust the width of the PDF viewer as needed */
+    max-height: 80%;
+    background-color: #fff; /* White background for the PDF */
+}
+
+ /* ... previous styles ... */
+
+ /* ... other styles ... */
+
+ .archive-item {
+     width: 100%; /* Make archive items take full width */
+     margin-bottom: 1rem; /* Add space between items */
+     border: 1px solid #555;
+     border-radius: 5px;
+     background-color: #282828;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+     display: flex; /* Apply Flexbox to the archive item */
+     justify-content: space-between; /* Distribute space evenly between items */
+     align-items: center; /* Align items vertically */
+ }
+
+ .archive-content {
+     padding: 1rem;
+     flex: 1; /* Allow the content to take up available space */
+     margin-right: 1rem; /* Add spacing between content and image */
+ }
+
+ .archive-image {
+     width: 200px; /* Adjust the image width as needed */
+     height: auto; /* Maintain aspect ratio */
+     border-top: 1px solid #555;
+     cursor: pointer;
+ }
+
+ /* ... other styles ... */
+
+button {
+    padding: 10px 20px;
+    background-color: #333; /* Dark gray */
+    color: white; /* Keep the text color white */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.7)); 
+    margin-bottom: 2rem; 
+}
+
+/* Center everything on page 3 */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Take up full height of the viewport */
+}
+
+header {
+    /* ... other header styles ... */
+    width: 100%;
+    text-align: center; 
+}
+
+.archive {
+    /* ... other archive styles ... */
+    width: 100%; 
+}
+
+pdfViewer {
+    /* ... other PDF viewer styles ... */
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Take up full width */
+    height: auto; /* Adjust height automatically */
+    margin: 0; /* Remove default margin */
+}
+
+footer {
+    /* ... other footer styles ... */
+    width: 100%; 
+    text-align: center;
+}
+
+
+/* ... other styles ... */
+
+.audio-controls {
+    display: none; /* Initially hide the controls */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; 
+}
+
+.audio-controls button {
+    margin-bottom: 5px; /* Add spacing between buttons */
+}
+
+/* ... your existing style.css code ... */
+
+/* Style for smaller screens (e.g., phones) */
+@media (max-width: 600px) { 
+  .navbar a {
+    max-height: 200;
+    float: none; /* Remove the float property */
+    display: block; /* Each link will occupy a full width */
+    width: 100%; /* Make the link take up the full width */
+    font-size: 2cqh;
+  }
+}
+
+/* ... the rest of your style.css code ... */
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333334;
+margin: auto;
+    
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 100; /* Set a high z-index to ensure it stays on top */
+    border-bottom: 2px solid white; 
+    text-transform: auto;
+}
+
+/* ... other styles ... */
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+    margin: auto;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-container img {
+    width: 400px;  
+    height: auto;
+    margin: 20px;  /* Increased margin */
+    border: 1px solid #ccc;
+}
+
+
+.image-overlay {
+    position: relative;
+    display: inline-block;
+    width: 150px; /* Set a smaller width for the overlay */
+    height: 150px; /* Set a smaller height for the overlay */
+}
+
+.image-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    border-radius: 10px; /* Add a border radius to the image */
+}
+
+.image-overlay:hover img {
+    transform: scale(1.1);
+}
+
+.image-overlay.zoomed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-overlay.zoomed img {
+    width: 80%;
+    height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.archive-image{
+    border: none;
+  }
+  
+  .archive-image.active  {
+    border: 2px solid green;
+  }
+
+
+
+
+  /* The Overlay (curtain background) */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* Black with opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* Transition effect */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Change link color on hover */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #fff;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px;}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/* Menu button style */
+.menu-button {
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  border: none;
+}
+
+
+/* The Overlay (curtain menu) */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+/* Overlay content */
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Links inside overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Hover effect for links */
+.overlay a:hover {
+  color: #f1f1f1;
+}
+
+/* Close button */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* Media Query for Mobile: Hide the old navbar */
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Hide the old navbar on small screens */
+  }
+}
+
+
+
+
+.hidden {
+  display: none;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-content {
+  text-align: center;
+}
+
+/* Make the pdfViewer element responsive */
+.pdfViewer {
+  width: 100%; /* Take full width on mobile devices */
+  height: auto; /* Adjust height according to content */
+  overflow: auto; /* Add scrollbar if content exceeds height */
+}
+
+/* Center the pdfViewer element on mobile devices */
+.centered {
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px; /* Add some padding for better visibility */
+}
+
+
+
+/* Style the pdfCanvas to adjust its size based on screen size */
+#pdfCanvas {
+  width: 80%; /* default width for larger screens */
+  height: 1000px; /* default height for larger screens */
+}
+
+/* Media query for mobile devices (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+  #pdfCanvas {
+    width: 95%; /* adjust width for mobile devices */
+    height: 600px; /* adjust height for mobile devices */
+  }
+}
+
+/* Media query for tablet devices (min-width: 769px) and (max-width: 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  #pdfCanvas {
+    width: 85%; /* adjust width for tablet devices */
+    height: 800px; /* adjust height for tablet devices */
+  }
+}

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waren Sardne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="text-align: center;">
+
+<header>
+    <img src="file.jpg" alt="Header Image" class="header-image">
+    <h1>Waren Sardne</h1>
+
+    <!-- Old Navbar (will be hidden on small screens) -->
+    <div class="navbar" id="oldNavbar">
+        <a href="index.html">Om språket i Waren Sardne</a>
+        <a href="page3.html">Se på forskjelige Waren Sardne aviser</a>
+        <a href="page.html">Foto galeri</a>
+        <a href="page2.html">Kilder</a>
+    </div>  
+
+    <!-- New Curtain Menu -->
+    <div id="myNav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <a href="index.html">Om språket i Waren Sardne</a>
+            <a href="page3.html">Se på forskjelige Waren Sardne aviser</a>
+            <a href="page.html">Foto galeri</a>
+            <a href="page2.html">Kilder</a>
+        </div>
+    </div>
+
+    <!-- Button to open the curtain menu (Initially hidden) -->
+    <span id="menuButton" onclick="openNav()" style="display: none;">Åpne meny</span>
+</header>
+
+
+    <main>
+        <section id="content">
+            <div class="centered-section">
+                <div class="intro-text">
+                    <h2 style="font-family: 'ModernTypewriter', sans-serif;">Utforsking av Språket i Waren Sardne</h2>
+                    <p style="font-family: 'ModernTypewriter', sans-serif;">Denne delen av utstillingen utforsker vi språket i den samiske avisen *Waren Sardne* og ser nærmere på de historiske, kulturelle og praktiske forholdene som har formet språkbruken. Gjennom en dypere forståelse av hvordan fornorskning, språklig tilgjengelighet, mangel på et skriftspråk, og praktiske hensyn har påvirket både samisk og norsk, vil vi gi innsikt i hvorfor norsk spiller en viktig rolle i samisk media i dag. Vi skal gå gjennom fire hovedaspekter som forklarer samspillet mellom samisk og norsk språk i *Waren Sardne*, og hvordan dette reflekterer den større språklige situasjonen for samene i Norge.</p>
+                </div>
+                <audio id="sound4" src="mixkit-game-show-suspense-waiting-667.wav"></audio>
+                <button class="les-opp-button" id="playButton4">les opp</button>
+                <div class="audio-controls" id="controls4">
+                    <button id="pauseButton4">pause</button>
+                    <button id="stopButton4">stop</button>
+                </div>
+                <script>
+                    const sound4 = document.getElementById('sound4');
+                    const playButton4 = document.getElementById('playButton4');
+                    const pauseButton4 = document.getElementById('pauseButton4');
+                    const stopButton4 = document.getElementById('stopButton4');
+                    const controls4 = document.getElementById('controls4');
+
+
+                    playButton4.addEventListener('click', () => {
+                        sound4.play();
+                        controls4.style.display = 'block'; // Show controls
+                    });
+
+
+                    pauseButton4.addEventListener('click', () => {
+                        sound4.pause();
+                    });
+
+
+                    stopButton4.addEventListener('click', () => {
+                        sound4.pause();
+                        sound4.currentTime = 0;
+                        controls4.style.display = 'none'; // Hide controls
+                    });
+                </script>
+
+
+
+
+                <div class="section-content">
+                    <h3 style="font-family: 'ModernTypewriter', sans-serif;">1. Historisk Undertrykkelse</h3>
+                    <p style="font-family: 'ModernTypewriter', sans-serif;">Fornorskningspolitikken som ble iverksatt fra 1800-tallet og langt ut på 1900-tallet, hadde som mål å assimilere samene og andre minoriteter til den norske kulturen og språket. Dette førte til at samisk språk, kultur og identitet ble kraftig undertrykt. Barn ble ofte sendt til internatskoler hvor det var forbudt å snakke samisk, og bruken av samisk i det offentlige rom var begrenset. Som en konsekvens av denne systematiske undertrykkelsen, mistet mange samer evnen til å bruke sitt eget språk, både muntlig og skriftlig. Norsk ble derfor det dominerende språket for mange samer. Selv om det i dag finnes et økende fokus på revitalisering av samisk språk, er norsk fortsatt et viktig kommunikasjonsmiddel i samiske samfunn, både for å nå de som ikke behersker samisk og for å skape en bro til det bredere norske samfunnet.</p>
+                    <audio id="sound1" src="mixkit-game-show-suspense-waiting-667.wav"></audio>
+                    <button class="les-opp-button" id="playButton1">les opp</button>
+                    <div class="audio-controls" id="controls1">
+                        <button id="pauseButton1">pause</button>
+                        <button id="stopButton1">stop</button>
+                    </div>
+                    <script>
+                        const sound1 = document.getElementById('sound1');
+                        const playButton1 = document.getElementById('playButton1');
+                        const pauseButton1 = document.getElementById('pauseButton1');
+                        const stopButton1 = document.getElementById('stopButton1');
+                        const controls1 = document.getElementById('controls1');
+
+
+                        playButton1.addEventListener('click', () => {
+                            sound1.play();
+                            controls1.style.display = 'block';
+                        });
+
+
+                        pauseButton1.addEventListener('click', () => {
+                            sound1.pause();
+                        });
+
+
+                        stopButton1.addEventListener('click', () => {
+                            sound1.pause();
+                            sound1.currentTime = 0;
+                            controls1.style.display = 'none';
+                        });
+                    </script>
+                </div>
+
+
+                <img src="DSC00825.JPG" alt="Image related to the topic" class="section-image">
+
+
+                <div class="section-content">
+                    <h3 style="font-family: 'ModernTypewriter', sans-serif;">2. Tilgjengelighet</h3>
+                    <p style="font-family: 'ModernTypewriter', sans-serif;">Norsk brukes i mange samiske medier for å nå et bredere publikum. Dette inkluderer samer som på grunn av fornorskningen har mistet tilknytningen til det samiske språket, samt personer utenfor det samiske samfunnet som er interessert i å lære om samiske saker. Norsk er majoritetsspråket i Norge, og derfor er det viktig for samiske medier å kommunisere på et språk som mange forstår. Dette gjelder spesielt for nyhetsformidling og informasjon som angår hele befolkningen, som for eksempel politiske beslutninger eller kulturarrangementer. Ved å inkludere norsk, sikrer man at informasjonen når ut til både samer og nordmenn, og på den måten skapes en plattform hvor samiske saker kan diskuteres i et bredere perspektiv.</p>
+                    <audio id="sound2" src="sound2.mp3"></audio>
+                    <button class="les-opp-button" id="playButton2">les opp</button>
+                    <div class="audio-controls" id="controls2">
+                        <button id="pauseButton2">pause</button>
+                        <button id="stopButton2">stop</button>
+                    </div>
+                    <script>
+                        const sound2 = document.getElementById('sound2');
+                        const playButton2 = document.getElementById('playButton2');
+                        const pauseButton2 = document.getElementById('pauseButton2');
+                        const stopButton2 = document.getElementById('stopButton2');
+                        const controls2 = document.getElementById('controls2');
+
+
+                        playButton2.addEventListener('click', () => {
+                            sound2.play();
+                            controls2.style.display = 'block';
+                        });
+
+
+                        pauseButton2.addEventListener('click', () => {
+                            sound2.pause();
+                        });
+
+
+                        stopButton2.addEventListener('click', () => {
+                            sound2.pause();
+                            sound2.currentTime = 0;
+                            controls2.style.display = 'none';
+                        });
+                    </script>
+                </div>
+
+
+                <img src="DSC00871.JPG" alt="Image related to the topic" class="section-image">
+
+
+                <div class="section-content">
+                    <h3 style="font-family: 'ModernTypewriter', sans-serif;">3. Mangel på Skriftspråk</h3>
+                    <p style="font-family: 'ModernTypewriter', sans-serif;">Samisk språk har i stor grad vært et muntlig språk i mange hundre år. Selv før fornorskningen startet, var det ikke et standardisert skriftspråk for samisk. Tradisjonelt ble samisk kunnskap og kultur videreført gjennom muntlige tradisjoner som joik, fortellinger, og andre former for muntlig overlevering. Det var først i forbindelse med kristen misjonering på 1600-tallet at samisk fikk sin første formelle skriftspråklige form gjennom oversettelser av bibelske tekster. Imidlertid har utviklingen av et samisk skriftspråk vært preget av fragmentering og langsom fremgang, spesielt fordi det finnes flere ulike samiske språkvarianter, hver med sine egne dialekter og utfordringer knyttet til standardisering. Dette har gjort at mange samiske samfunn fortsatt sliter med å utvikle og bruke skriftspråket i stor skala, og som et resultat av dette er det ofte enklere og mer praktisk å benytte norsk.</p>
+                    <audio id="sound3" src="sound3.mp3"></audio>
+                    <button class="les-opp-button" id="playButton3">les opp</button>
+                    <div class="audio-controls" id="controls3">
+                        <button id="pauseButton3">pause</button>
+                        <button id="stopButton3">stop</button>
+                    </div>
+                    <script>
+                        const sound3 = document.getElementById('sound3');
+                        const playButton3 = document.getElementById('playButton3');
+                        const pauseButton3 = document.getElementById('pauseButton3');
+                        const stopButton3 = document.getElementById('stopButton3');
+                        const controls3 = document.getElementById('controls3');
+
+
+                        playButton3.addEventListener('click', () => {
+                            sound3.play();
+                            controls3.style.display = 'block';
+                        });
+
+
+                        pauseButton3.addEventListener('click', () => {
+                            sound3.pause();
+                        });
+
+
+                        stopButton3.addEventListener('click', () => {
+                            sound3.pause();
+                            sound3.currentTime = 0;
+                            controls3.style.display = 'none';
+                        });
+                    </script>
+                </div>
+
+
+                <img src="DSC00867.JPG" alt="Image related to the topic" class="section-image">
+
+
+                <div class="section-content">
+                    <h3 style="font-family: 'ModernTypewriter', sans-serif;">4. Praktiske Hensyn</h3>
+                    <p style="font-family: 'ModernTypewriter', sans-serif;">Norsk har blitt det dominerende språket i mange samiske områder på grunn av fornorskningen, både muntlig og skriftlig. Selv om det i dag er en sterk bevegelse for å gjenopprette og styrke bruken av samisk, er norsk fortsatt det språket som flest forstår og kan bruke daglig. Dette gjør at samiske medier ofte velger en tospråklig publisering, slik at de både kan ivareta det samiske språket og samtidig sørge for that viktige nyheter og informasjon når ut til de som ikke snakker eller leser samisk. Et annet praktisk aspekt er at samisk er et minoritetsspråk med begrensede ressurser, både når det gjelder undervisning, oversettelser, og publisering. Ved å bruke norsk kan samiske medier sikre at de har tilstrekkelig med ressurser til å produsere kvalitetsinnhold, samtidig som de holder det samiske språket levende gjennom flerspråklige publikasjoner.</p>
+                    <audio id="sound4" src="sound4.mp3"></audio>
+                    <button class="les-opp-button" id="playButton4">les opp</button>
+                    <div class="audio-controls" id="controls4">
+                        <button id="pauseButton4">pause</button>
+                        <button id="stopButton4">stop</button>
+                    </div>
+                    <script>
+                        const sound4 = document.getElementById('sound4');
+                        const playButton4 = document.getElementById('playButton4');
+                        const pauseButton4 = document.getElementById('pauseButton4');
+                        const stopButton4 = document.getElementById('stopButton4');
+                        const controls4 = document.getElementById('controls4');
+
+
+                        playButton4.addEventListener('click', () => {
+                            sound4.play();
+                            controls4.style.display = 'block'; // Show controls
+                        });
+
+
+                        pauseButton4.addEventListener('click', () => {
+                            sound4.pause();
+                        });
+
+
+                        stopButton4.addEventListener('click', () => {
+                            sound4.pause();
+                            sound4.currentTime = 0; // Reset to the beginning
+                            controls4.style.display = 'none'; // Hide controls
+                        });
+                    </script>
+      
+    </div>
+
+    <img src="DSC00867.JPG" alt="Image related to the topic" class="section-image">
+
+
+               
+               
+            
+                <div class="section-content">
+            <h3 style="font-family: 'ModernTypewriter', sans-serif;">5. Et gammelt språk</h3>
+            <p style="font-family: 'ModernTypewriter', sans-serif;">
+                Det norske skriftspråket var i kontinuerlig forandring på 1800-1900 tallet. De største faktorene til at det norske skriftspråket var i så stor forandring var at i 1814 løsrav Norge seg fra danmark, dette førte til at det norske folk ønsket seg eget skriftspråk. Både språket og skriftspråket hadde blitt påvirket av dansk, men i hovedsak ble skriftspråket kalt “dansk-norsk”. Det ble bestemt at det norske skriftspråket skulle bli basert på den danske skrifttradisjonen, men målet var og fornorsket det i så stor grad. I avisen Waren Sardne ser vi flere tegn til dansk skriftspråk og at flere ord og setningsoppbygningen er veldig lik som den i danmark. i nyere tider har danske ord og fraser blitt skylt ut av det norske skriftspråket. dette skjedde fordi på samme tid som vi skulle få eget skriftspråk, ble bokmål og nynorsk innført.
+                </p>
+            <audio id="sound5" src="sound5.mp3"></audio>
+            <button class="les-opp-button" id="playButton5">les opp</button>
+            <div class="audio-controls" id="controls5">
+                <button id="pauseButton5">pause</button>
+                <button id="stopButton5">stop</button>
+            </div>
+            <script>
+                const sound4 = document.getElementById('sound5');
+                const playButton4 = document.getElementById('playButton5');
+                const pauseButton4 = document.getElementById('pauseButton5');
+                const stopButton4 = document.getElementById('stopButton5');
+                const controls4 = document.getElementById('controls5');
+    
+    
+                playButton5.addEventListener('click', () => {
+                    sound5.play();
+                    controls4.style.display = 'block';
+                });
+    
+    
+                pauseButton5.addEventListener('click', () => {
+                    sound5.pause();
+                });
+    
+    
+                stopButton5.addEventListener('click', () => {
+                    sound5.pause();
+                    sound5.currentTime = 0;
+                    controls5.style.display = 'none';
+                });
+            </script>
+
+</section>
+
+    </main>
+
+
+    <footer>
+        <p style="font-family: 'ModernTypewriter', sans-serif;">&copy; [Waren Sardne] [2024]</p>
+       
+    </footer>
+
+
+    <script>
+        /* Open the curtain menu */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+    
+        /* Close the curtain menu */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    
+        /* Function to toggle navbars based on screen size */
+        function toggleNavbars() {
+            const width = window.innerWidth;
+            const oldNavbar = document.getElementById('oldNavbar');
+            const menuButton = document.getElementById('menuButton');
+    
+            if (width <= 768) {
+                oldNavbar.style.display = 'none';  // Hide the old navbar on mobile
+                menuButton.style.display = 'inline';  // Show the button to open the new menu
+            } else {
+                oldNavbar.style.display = 'block';  // Show the old navbar on larger screens
+                menuButton.style.display = 'none';  // Hide the button on larger screens
+                closeNav();  // Close the overlay if open
+            }
+        }
+    
+        // Call toggleNavbars on load and resize
+        window.onload = toggleNavbars;
+        window.onresize = toggleNavbars;
+    </script>
+    
+    </body>
+    </html>

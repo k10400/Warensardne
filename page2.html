@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waren Sardne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="text-align: center;">
+
+<header>
+    <img src="file.jpg" alt="Header Image" class="header-image">
+    <h1>Waren Sardne</h1>
+
+    <!-- Old Navbar (will be hidden on small screens) -->
+    <div class="navbar" id="oldNavbar">
+        <a href="index.html">Om språket i Waren Sardne</a>
+        <a href="page3.html">Se på forskjelige Waren Sardne aviser</a>
+        <a href="page.html">Foto galeri</a>
+        <a href="page2.html">Kilder</a>
+    </div>  
+
+    <!-- New Curtain Menu -->
+    <div id="myNav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <a href="index.html">Om språket i Waren Sardne</a>
+            <a href="page3.html">Se på forskjelige Waren Sardne aviser</a>
+            <a href="page.html">Foto galeri</a>
+            <a href="page2.html">Kilder</a>
+        </div>
+    </div>
+
+    <!-- Button to open the curtain menu (Initially hidden) -->
+    <span id="menuButton" onclick="openNav()" style="display: none;">Åpne meny</span>
+</header>
+
+    <main>
+        <section id="home">
+            <div class="centered-section"> <div class="section-content">
+                <h2>Kilder Waren Sardne</h2>
+                <p></p>
+            </div>
+            <img src="images.jpg" alt="Museum exterior" class="section-image">
+            <main>
+              
+            </main>
+
+    <footer>
+        <p>&copy; [Waren Sardne] [2024]</p>
+    </footer>
+
+    <script>
+        /* Open the curtain menu */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+    
+        /* Close the curtain menu */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    
+        /* Function to toggle navbars based on screen size */
+        function toggleNavbars() {
+            const width = window.innerWidth;
+            const oldNavbar = document.getElementById('oldNavbar');
+            const menuButton = document.getElementById('menuButton');
+    
+            if (width <= 768) {
+                oldNavbar.style.display = 'none';  // Hide the old navbar on mobile
+                menuButton.style.display = 'inline';  // Show the button to open the new menu
+            } else {
+                oldNavbar.style.display = 'block';  // Show the old navbar on larger screens
+                menuButton.style.display = 'none';  // Hide the button on larger screens
+                closeNav();  // Close the overlay if open
+            }
+        }
+    
+        // Call toggleNavbars on load and resize
+        window.onload = toggleNavbars;
+        window.onresize = toggleNavbars;
+    </script>
+    
+    </body>
+    </html>
