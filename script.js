@@ -84,37 +84,16 @@ function adjustPDFCanvas() {
 
   
   
-  import { PDFDocument } from 'pdfjs-dist/build/pdf';
+  const pdfjsLib = window['pdfjs-dist/build/pdf'];
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'path/to/pdf.worker.js';
 
-// ...
-
-archiveImages.forEach(image => {
-  image.addEventListener('click', () => {
-    const pdfSrc = image.getAttribute('data-pdf');
-    if (pdfSrc) {
-      // Use PDF.js to render the PDF file
-      const pdfDoc = new pdfjsLib.PDFDocument();
-      pdfDoc.load(pdfSrc).then(pdf => {
-        const pdfPage = pdf.getPage(1);
-        const scale = 1.5;
-        const viewport = pdfPage.getViewport({ scale: scale });
-        const canvas = document.getElementById('pdfCanvas');
-        const context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-        pdfPage.render({ canvasContext: context, viewport: viewport });
-      });
-      pdfViewer.classList.remove('hidden'); // Show the PDF viewer
-    } else {
-      console.error('No PDF source found for this image.');
-    }
-  });
-});
-
+let pdfDoc = null;
+const pdfCanvas = document.getElementById('pdfCanvas');
+const ctx = pdfCanvas.getContext('2d');
 
 function renderPage(pageNum) {
-    pdfDoc.getPage(pageNum).then(function(page) {
-        const scale = window.innerWidth <= 768 ? 0.8 : 1.5;  // Smaller scale for mobile
+    pdfDoc.getPage(pageNum).then(page => {
+        const scale = window.innerWidth <= 768 ? 0.8 : 1.5;
         const viewport = page.getViewport({ scale: scale });
 
         pdfCanvas.height = viewport.height;
@@ -130,48 +109,53 @@ function renderPage(pageNum) {
     });
 }
 
-window.addEventListener('resize', function() {
-    console.log('Window resized');
-    // Your resizing code here
-  });
-  
-
-  // Assuming PDF.js is included and loaded
-const url = 'path/to/your/pdf-file.pdf';
-
-const pdfjsLib = window['pdfjs-dist/build/pdf'];
-
-// Set the PDF worker source
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'path/to/pdf.worker.js';
-
-const loadingTask = pdfjsLib.getDocument(url);
-loadingTask.promise.then(function(pdf) {
-  console.log('PDF loaded');
-
-  // Fetch the first page
-  pdf.getPage(1).then(function(page) {
-    console.log('Page loaded');
-
-    const scale = 1.5;
-    const viewport = page.getViewport({ scale: scale });
-
-    // Prepare canvas using PDF page dimensions
-    const canvas = document.getElementById('pdfCanvas');
-    const context = canvas.getContext('2d');
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
-
-    // Render PDF page into canvas context
-    const renderContext = {
-      canvasContext: context,
-      viewport: viewport
-    };
-    const renderTask = page.render(renderContext);
-    renderTask.promise.then(function() {
-      console.log('Page rendered');
+function loadAndRenderPDF(pdfSrc) {
+    pdfjsLib.getDocument(pdfSrc).promise.then(pdf => {
+        pdfDoc = pdf;
+        const totalPages = pdf.numPages;
+        document.getElementById('totalPages').textContent = totalPages;
+        renderPage(1); // Render the first page initially
+        document.getElementById('pdfViewer').classList.remove('hidden'); // Show the PDF viewer
+    }).catch(error => {
+        console.error('Error loading PDF:', error);
     });
-  });
-}, function(reason) {
-  // PDF loading error
-  console.error(reason);
+}
+
+document.querySelectorAll('.archive-image').forEach(image => {
+    image.addEventListener('click', () => {
+        const pdfSrc = image.getAttribute('data-pdf');
+        if (pdfSrc) {
+            loadAndRenderPDF(pdfSrc);
+            image.parentNode.classList.add('bordered'); // Add border to image overlay
+        } else {
+            console.error('No PDF source found for this image.');
+        }
+    });
 });
+
+document.getElementById('nextPage').addEventListener('click', () => {
+    if (pdfDoc) {
+        const currentPage = parseInt(document.getElementById('currentPage').textContent, 10);
+        if (currentPage < pdfDoc.numPages) {
+            renderPage(currentPage + 1);
+        }
+    }
+});
+
+document.getElementById('prevPage').addEventListener('click', () => {
+    if (pdfDoc) {
+        const currentPage = parseInt(document.getElementById('currentPage').textContent, 10);
+        if (currentPage > 1) {
+            renderPage(currentPage - 1);
+        }
+    }
+});
+
+function adjustPDFCanvas() {
+    const width = window.innerWidth;
+    pdfCanvas.style.width = width <= 768 ? '100%' : '80%';
+    pdfCanvas.style.height = width <= 768 ? '80vh' : '1000px';
+}
+
+window.onload = adjustPDFCanvas;
+window.onresize = adjustPDFCanvas;
