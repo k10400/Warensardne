@@ -660,3 +660,12 @@ canvas {
   max-height: 90%;
   background-color: white; /* Ensure background is not transparent */
 }
+
+
+/* Mobile specific CSS */
+@media only screen and (max-width: 768px) {
+  #pdfCanvas {
+    width: 95% !important; /* Adjust width for mobile devices */
+    height: 600px !important; /* Adjust height for mobile devices */
+  }
+}

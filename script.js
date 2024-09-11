@@ -130,3 +130,48 @@ function renderPage(pageNum) {
     });
 }
 
+window.addEventListener('resize', function() {
+    console.log('Window resized');
+    // Your resizing code here
+  });
+  
+
+  // Assuming PDF.js is included and loaded
+const url = 'path/to/your/pdf-file.pdf';
+
+const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+// Set the PDF worker source
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'path/to/pdf.worker.js';
+
+const loadingTask = pdfjsLib.getDocument(url);
+loadingTask.promise.then(function(pdf) {
+  console.log('PDF loaded');
+
+  // Fetch the first page
+  pdf.getPage(1).then(function(page) {
+    console.log('Page loaded');
+
+    const scale = 1.5;
+    const viewport = page.getViewport({ scale: scale });
+
+    // Prepare canvas using PDF page dimensions
+    const canvas = document.getElementById('pdfCanvas');
+    const context = canvas.getContext('2d');
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    // Render PDF page into canvas context
+    const renderContext = {
+      canvasContext: context,
+      viewport: viewport
+    };
+    const renderTask = page.render(renderContext);
+    renderTask.promise.then(function() {
+      console.log('Page rendered');
+    });
+  });
+}, function(reason) {
+  // PDF loading error
+  console.error(reason);
+});
