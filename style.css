@@ -642,11 +642,21 @@ canvas {
 }
 
 
-#pdfViewer {
+.pdfViewer {
+  position: fixed; /* Ensure it's on top */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
+#pdfCanvas {
+  max-width: 90%;
+  max-height: 90%;
+  background-color: white; /* Ensure background is not transparent */
+}
