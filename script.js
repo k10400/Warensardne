@@ -110,3 +110,23 @@ archiveImages.forEach(image => {
     }
   });
 });
+
+
+function renderPage(pageNum) {
+    pdfDoc.getPage(pageNum).then(function(page) {
+        const scale = window.innerWidth <= 768 ? 0.8 : 1.5;  // Smaller scale for mobile
+        const viewport = page.getViewport({ scale: scale });
+
+        pdfCanvas.height = viewport.height;
+        pdfCanvas.width = viewport.width;
+
+        const renderContext = {
+            canvasContext: ctx,
+            viewport: viewport
+        };
+        page.render(renderContext);
+
+        document.getElementById('currentPage').textContent = pageNum;
+    });
+}
+
