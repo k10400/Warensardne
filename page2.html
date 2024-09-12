@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waren Sardne</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add custom styles here */
+        .source-list {
+            font-family: 'ModernTypewriter', sans-serif;
+            font-size: 1.2em; /* Larger text */
+            line-height: 1.6; /* More space between lines */
+            margin: 20px auto; /* Centered and add margin */
+            padding: 0;
+            max-width: 800px; /* Maximum width for readability */
+            list-style-position: inside; /* Position numbers inside list item */
+        }
+
+        .source-list li {
+            margin-bottom: 15px; /* Space between list items */
+        }
+
+        .source-list a {
+            color: #007BFF; /* Blue color for links */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .source-list a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
 </head>
 <body style="text-align: center;">
 
@@ -16,7 +41,6 @@
     <div class="navbar" id="oldNavbar">
         <a href="index.html">Om språket i Waren Sardne</a>
         <a href="page3.html">Se på forskjelige Waren Sardne aviser</a>
-        <a href="page.html">Foto galeri</a>
         <a href="page2.html">Kilder</a>
     </div>  
 
@@ -29,61 +53,60 @@
         <div class="overlay-content">
             <a href="index.html">Om språket i Waren Sardne</a>
             <a href="page3.html">Se på forskjelige Waren Sardne aviser</a>
-            <a href="page.html">Foto galeri</a>
             <a href="page2.html">Kilder</a>
         </div>
     </div>
 
     <!-- Button to open the curtain menu (Initially hidden) -->
-    <span id="menuButton" onclick="openNav()" style="display: none;">Åpne meny</span>
+    <span id="menuButton" onclick="openNav()" style="display: none;">☰ Åpne meny</span>
 </header>
 
-    <main>
-        <section id="home">
-            <div class="centered-section"> <div class="section-content">
-                <h2>Kilder Waren Sardne</h2>
-                <p></p>
+<main>
+    <section id="home">
+        <div class="centered-section">            
+            <div class="section-content">
+                <h3 class="source-list-heading">Kildeliste</h3>
+                <ol class="source-list">
+                    <li>Aksnes, K. (2023, januar 12). snl. Hentet fra år#-Tropisk_år: <a href="https://snl.no/år#-Tropisk_år">https://snl.no/år#-Tropisk_år</a></li>
+                    <li>Alan Buis. (2020, februar 27). Nasa. Hentet fra Milankovitch (Orbital) Cycles and Their Role in Earth's Climate: <a href="https://climate.nasa.gov/news/2948/milankovitch-orbital-cycles-and-their-role-in-earths-climate/">https://climate.nasa.gov/news/2948/milankovitch-orbital-cycles-and-their-role-in-earths-climate/</a></li>
+                    <li>Dahle, H. (2018, september 25). snl jordaksen. Hentet fra jordaksen: <a href="https://snl.no/jordaksen">https://snl.no/jordaksen</a></li>
+                    <li>Dahle, H. (2020, juni 15). snl presesjon. Hentet fra presesjon_-_astronomi: <a href="https://snl.no/presesjon_-_astronomi">https://snl.no/presesjon_-_astronomi</a></li>
+                    <li>Dahle, H. (2022, november 18). snl nutasjon. Hentet fra nutasjon_-_astronomi: <a href="https://snl.no/nutasjon_-_astronomi">https://snl.no/nutasjon_-_astronomi</a></li>
+                    <li>Dahle, H. (2023, januar 24). snl polhøyde. Hentet fra polhøyde: <a href="https://snl.no/polhøyde">https://snl.no/polhøyde</a></li>
+                    <li>Elgarøy, Ø. (2020, mai 16). snl. Hentet fra Milutin_Milanković: <a href="https://snl.no/Milutin_Milanković">https://snl.no/Milutin_Milanković</a></li>
+                    <li>Fossen, H. (2023, mars 1). snl. Hentet fra Milanković-sykluser: <a href="https://snl.no/Milanković-sykluser">https://snl.no/Milanković-sykluser</a></li>
+                    <li>Hofstad, K. (2021, Juli 13). Snl. Hentet fra breddegrad: <a href="https://snl.no/breddegrad">https://snl.no/breddegrad</a></li>
+                    <li>Hofstad, K. (2024, januar 8). snl buesekund. Hentet fra buesekund: <a href="https://snl.no/buesekund">https://snl.no/buesekund</a></li>
+                    <li>Kristiansen, J. R. (2023, januar 23). snl nutasjon. Hentet fra nutasjon: <a href="https://snl.no/nutasjon">https://snl.no/nutasjon</a></li>
+                    <li>polarpedia. (u.d.). Hentet fra obliquity: <a href="https://polarpedia.eu/en/obliquity/">https://polarpedia.eu/en/obliquity/</a></li>
+                    <li>Sandes, K. (2022, juni 7). Estudie. Hentet fra Jordbanen sin påvirkning på klima: <a href="https://estudie.no/jordbanen-sin-pavirkning-pa-klima/">https://estudie.no/jordbanen-sin-pavirkning-pa-klima/</a></li>
+                    <li>Sjøgren, K. (2015, mars 9). forskning.no. Hentet fra Klimaet endrer seg som for 1,4 milliarder år siden: <a href="https://www.forskning.no/kina-klima-miljo/klimaet-endrer-seg-som-for-14-milliarder-ar-siden/505641">https://www.forskning.no/kina-klima-miljo/klimaet-endrer-seg-som-for-14-milliarder-ar-siden/505641</a></li>
+                    <li>Vatne, J. E. (2023, april 4). snl. Hentet fra kjeglesnitt: <a href="https://snl.no/kjeglesnitt">https://snl.no/kjeglesnitt</a></li>
+                    <li>Vatne, J. E. (2023, april 4). snl eksentrisitet. Hentet fra eksentrisitet matematikk: <a href="https://snl.no/eksentrisitet_-_matematikk">https://snl.no/eksentrisitet_-_matematikk</a></li>
+                    <li>wikipedia. (u.d.). Hentet fra <a href="https://en.wikipedia.org/wiki/Earth%27s_rotation">https://en.wikipedia.org/wiki/Earth%27s_rotation</a></li>
+                    <li>wikipedia Aksehelning. (2023, november 23). Hentet fra Aksehelning: <a href="https://no.wikipedia.org/wiki/Aksehelning">https://no.wikipedia.org/wiki/Aksehelning</a></li>
+                    <li>wikipedia Eksentrisitet. (2023, februar 8). Hentet fra Eksentrisitet: <a href="https://no.wikipedia.org/wiki/Eksentrisitet?oldformat=true">https://no.wikipedia.org/wiki/Eksentrisitet?oldformat=true</a></li>
+                    <li>wikipedia Milanković-syklusene .no. (2021, juli 6). Hentet fra Milanković-syklusene: <a href="https://no.wikipedia.org/wiki/Milanković-syklusene">https://no.wikipedia.org/wiki/Milanković-syklusene</a></li>
+                    <li>wikipedia Milankovitch_cycles .en. (2024, januar 8). Hentet fra Milankovitch_cycles: <a href="https://en.wikipedia.org/wiki/Milankovitch_cycles">https://en.wikipedia.org/wiki/Milankovitch_cycles</a></li>
+                    <li>wikipedia Presesjon. (2023, september 4). Hentet fra Presesjon: <a href="https://no.wikipedia.org/wiki/Presesjon">https://no.wikipedia.org/wiki/Presesjon</a></li>
+                    <li>wikipedia Siderisk_år. (u.d.). Hentet fra Siderisk_år: <a href="https://no.wikipedia.org/wiki/Siderisk_år">https://no.wikipedia.org/wiki/Siderisk_år</a></li>
+                </ol>
             </div>
-            <img src="images.jpg" alt="Museum exterior" class="section-image">
-            <main>
-              
-            </main>
+        </div>
+    </section>
+</main>
 
-    <footer>
-        <p>&copy; [Waren Sardne] [2024]</p>
-    </footer>
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+        document.getElementById("menuButton").style.display = "none";
+    }
 
-    <script>
-        /* Open the curtain menu */
-        function openNav() {
-            document.getElementById("myNav").style.width = "100%";
-        }
-    
-        /* Close the curtain menu */
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0%";
-        }
-    
-        /* Function to toggle navbars based on screen size */
-        function toggleNavbars() {
-            const width = window.innerWidth;
-            const oldNavbar = document.getElementById('oldNavbar');
-            const menuButton = document.getElementById('menuButton');
-    
-            if (width <= 768) {
-                oldNavbar.style.display = 'none';  // Hide the old navbar on mobile
-                menuButton.style.display = 'inline';  // Show the button to open the new menu
-            } else {
-                oldNavbar.style.display = 'block';  // Show the old navbar on larger screens
-                menuButton.style.display = 'none';  // Hide the button on larger screens
-                closeNav();  // Close the overlay if open
-            }
-        }
-    
-        // Call toggleNavbars on load and resize
-        window.onload = toggleNavbars;
-        window.onresize = toggleNavbars;
-    </script>
-    
-    </body>
-    </html>
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+        document.getElementById("menuButton").style.display = "inline";
+    }
+</script>
+
+</body>
+</html>

@@ -12,7 +12,29 @@
             max-width: 100%;
             height: auto;
         }
-    </style>
+       
+        /* Style for buttons */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        /* Media query to reduce button size on smaller screens */
+        @media only screen and (max-width: 768px) {
+            button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            button {
+                padding: 6px 12px;
+                font-size: 12px;
+            } 
+        </style>
+
 </head>
 <body style="text-align: center;">
 
@@ -21,10 +43,11 @@
     <h1>Waren Sardne</h1>
 
     <!-- Old Navbar (will be hidden on small screens) -->
+    <span id="menuButton" onclick="openNav()" style="display: none;">☰ Åpne meny</span>
+
     <div class="navbar" id="oldNavbar">
         <a href="index.html">Om språket i Waren Sardne</a>
         <a href="page3.html">Se på forskjelige Waren Sardne aviser</a>
-        <a href="page.html">Foto galeri</a>
         <a href="page2.html">Kilder</a>
     </div>  
 
@@ -34,12 +57,11 @@
         <div class="overlay-content">
             <a href="index.html">Om språket i Waren Sardne</a>
             <a href="page3.html">Se på forskjelige Waren Sardne aviser</a>
-            <a href="page.html">Foto galeri</a>
             <a href="page2.html">Kilder</a>
         </div>
     </div>
 
-    <span id="menuButton" onclick="openNav()" style="display: none;">Åpne meny</span>
+  
 </header>
 
 <main>
