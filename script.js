@@ -159,3 +159,5 @@ function adjustPDFCanvas() {
 
 window.onload = adjustPDFCanvas;
 window.onresize = adjustPDFCanvas;
+
+
