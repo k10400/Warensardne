@@ -9,7 +9,7 @@
         /* Add custom styles here */
         .source-list {
             font-family: 'ModernTypewriter', sans-serif;
-            font-size: 1.2em; /* Larger text */
+            font-size: 1.2em; /* Larger text by default */
             line-height: 1.6; /* More space between lines */
             margin: 20px auto; /* Centered and add margin */
             padding: 0;
@@ -28,6 +28,18 @@
 
         .source-list a:hover {
             text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .source-list {
+                font-size: 0.9em; /* Smaller text on phones */
+                line-height: 1.4; /* Adjust line height for smaller text */
+            }
+
+            .source-list li {
+                margin-bottom: 10px; /* Reduce space between list items */
+            }
         }
     </style>
 </head>
@@ -63,7 +75,8 @@
 
 <main>
     <section id="home">
-        <div class="centered-section">            
+        <div class="centered-section">
+        
             <div class="section-content">
                 <h3 class="source-list-heading">Kildeliste</h3>
                 <ol class="source-list">
