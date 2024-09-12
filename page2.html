@@ -110,15 +110,35 @@
 </main>
 
 <script>
+    /* Open the curtain menu */
     function openNav() {
         document.getElementById("myNav").style.width = "100%";
-        document.getElementById("menuButton").style.display = "none";
     }
 
+    /* Close the curtain menu */
     function closeNav() {
         document.getElementById("myNav").style.width = "0%";
-        document.getElementById("menuButton").style.display = "inline";
     }
+
+    /* Function to toggle navbars based on screen size */
+    function toggleNavbars() {
+        const width = window.innerWidth;
+        const oldNavbar = document.getElementById('oldNavbar');
+        const menuButton = document.getElementById('menuButton');
+
+        if (width <= 768) {
+            oldNavbar.style.display = 'none';  // Hide the old navbar on mobile
+            menuButton.style.display = 'inline';  // Show the button to open the new menu
+        } else {
+            oldNavbar.style.display = 'block';  // Show the old navbar on larger screens
+            menuButton.style.display = 'none';  // Hide the button on larger screens
+            closeNav();  // Close the overlay if open
+        }
+    }
+
+    // Call toggleNavbars on load and resize
+    window.onload = toggleNavbars;
+    window.onresize = toggleNavbars;
 </script>
 
 </body>
