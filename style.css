@@ -534,7 +534,7 @@ gallery-container {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.9);
@@ -721,4 +721,30 @@ button {
   #prevPage, #nextPage {
       margin: 0 5px;
   }
+}
+
+
+/* CSS for the Åpne meny button */
+#menuButton {
+  position: absolute; /* Stay in the top-left corner */
+  top: 10px; /* Adjust the vertical positioning */
+  left: 10px; /* Adjust the horizontal positioning */
+  width: 100px; /* Set the width to a small value */
+  background-color: #888888c0; /* Gray color for the background */
+  color: #ffffff; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Optional: Rounded corners */
+  padding: 5px; /* Small padding */
+  font-size: 14px; /* Smaller font size */
+  z-index: 1; /* Ensure it's above other content */
+  cursor: pointer; /* Show pointer on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition effect */
+
+}
+
+/* Optional: Hover effect */
+#menuButton:hover {
+  background-color: #777777;
+  transform: scale(1.05); /* Slightly increase the size on hover */
+
 }

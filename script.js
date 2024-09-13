@@ -161,3 +161,45 @@ window.onload = adjustPDFCanvas;
 window.onresize = adjustPDFCanvas;
 
 
+// Select all audio elements and play buttons
+const audioElements = document.querySelectorAll('audio');
+const playButtons = document.querySelectorAll('.les-opp-button');
+
+// Function to stop all audios except the currently clicked one
+function pauseAllAudios(except) {
+    audioElements.forEach((audio) => {
+        if (audio !== except) {
+            audio.pause();
+            audio.currentTime = 0; // Reset time to the beginning
+        }
+    });
+}
+
+// Loop through each play button to add event listeners
+playButtons.forEach((button, index) => {
+    const sound = document.getElementById(`lesOppAudio${index + 1}`);
+    const pauseButton = document.getElementById(`pauseButton${index + 1}`);
+    const stopButton = document.getElementById(`stopButton${index + 1}`);
+    const controls = document.getElementById(`controls${index + 1}`);
+
+    button.addEventListener('click', () => {
+        // Pause all other audio elements before playing the selected one
+        pauseAllAudios(sound);
+
+        // Play the current audio
+        sound.play();
+        controls.style.display = 'block'; // Show pause/stop controls when playing
+    });
+
+    // Add functionality to the pause button
+    pauseButton.addEventListener('click', () => {
+        sound.pause();
+    });
+
+    // Add functionality to the stop button
+    stopButton.addEventListener('click', () => {
+        sound.pause();
+        sound.currentTime = 0; // Reset to the start
+        controls.style.display = 'none'; // Hide controls when stopped
+    });
+});
