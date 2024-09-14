@@ -203,3 +203,4 @@ playButtons.forEach((button, index) => {
         controls.style.display = 'none'; // Hide controls when stopped
     });
 });
+
