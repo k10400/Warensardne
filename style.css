@@ -748,3 +748,64 @@ button {
   transform: scale(1.05); /* Slightly increase the size on hover */
 
 }
+
+
+
+.audio-controls {
+  margin-top: 10px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#progress1 {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+#progress2 {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+#progress3 {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+#progress4 {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+#progress5 {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+#progress6 {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+#duration1 {
+  font-size: 0.9em;
+}
+
+#duration2 {
+  font-size: 0.9em;
+}
+#duration3 {
+  font-size: 0.9em;
+}
+#duration4 {
+  font-size: 0.9em;
+}
+#duration5 {
+  font-size: 0.9em;
+}
+#duration6 {
+  font-size: 0.9em;
+}
+
+
