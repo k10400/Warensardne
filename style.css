@@ -765,6 +765,8 @@ button {
 #progress1 {
   flex-grow: 1;
   margin-right: 10px;
+  
+
 }
 
 #progress2 {
@@ -787,6 +789,7 @@ button {
 #progress6 {
   flex-grow: 1;
   margin-right: 10px;
+
 }
 #duration1 {
   font-size: 0.9em;
