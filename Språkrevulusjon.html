@@ -5,221 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waren Sardne</title>
     <link rel="stylesheet" href="style.css">
-  <style>
-   body {
-    font-family: Arial, sans-serif;
-    color: #e0e0e0;
-    background-color: #121212;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    padding: 20px;
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-    text-align: center;
-}
-
-h1 {
-    margin-top: 0;
-    font-size: 36px;
-}
-
-.header-image {
-    max-width: 100%;
-    height: auto;
-}
-
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #2c2727;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
-
-.container {
-    padding: 20px;
-    position: relative;
-    border-radius: 8px;
-    background: #2c2c2c;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
-    width: calc(50% - 40px);
-    box-sizing: border-box;
-}
-
-.container::after {
-    padding: 20px;
-    content: "";
-    position: absolute;
-    top: 15px;
-    width: 0;
-    border-width: 15px;
-    border-style: solid;
-    border-color: transparent transparent transparent #2c2c2c;
-}
-
-.left {
-    left: 0;
-    transform: translateX(-30px);
-}
-
-.right {
-    left: 50%;
-    transform: translateX(30px);
-}
-
-.date {
-    position: absolute;
-    top: 10px;
-    background-color: #ccc;
-    color: #1f1f1f;
-    padding: 10px;
-    border-radius: 50%;
-    font-weight: bold;
-    font-size: 16px;
-    border: 2px solid #ccc;
-}
-
-.date-right {
-    position: absolute;
-    top: 10px;
-    right: 18px;
-    background-color: #ccc;
-    color: #1f1f1f;
-    padding: 10px;
-    border-radius: 50%;
-    font-weight: bold;
-    font-size: 16px;
-    border: 2px solid #ccc;
-}
-
-h2 {
-    font-size: 28px;
-    color: #e0e0e0;
-}
-
-p {
-    font-size: 18px;
-    color: #d0d0d0;
-}
-
-.footer {
-    padding: 20px;
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-    text-align: center;
-    border-top: 1px solid #333;
-}
-
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.overlay-content {
-    position: relative;
-    top: 0;
-    width: 100%;
-    text-align: center;
-}
-
-.overlay-content a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #f1f1f1;
-    display: block;
-    transition: 0.3s;
-}
-
-.overlay-content a:hover {
-    color: #2196F3;
-}
-
-.closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-#oldNavbar {
-    display: none;
-}
-
-/* Responsive styles for phones */
-@media only screen and (max-width: 768px) {
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    .container {
-        width: 100%;
-        margin: 0;
-        padding: 10px;
-    }
-
-    .container.left, .container.right {
-        transform: translateX(0);
-    }
-
-    .timeline::after {
-        left: 10px;
-    }
-
-    .date, .date-right {
-        top: -10px;
-        right: auto;
-        left: 10px;
-    }
-
-    .overlay-content a {
-        font-size: 18px;
-    }
-
-    .audio-controls {
-        display: block;
-        width: 100%;
-    }
-
-    .progress-container {
-        width: 100%;
-    }
-
-    .footer {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    /* Adjust the menu button for mobile */
-    #menuButton {
-        font-size: 28px;
-    }
-}
-
+    <style>
         body {
             font-family: Arial, sans-serif;
             color: #e0e0e0;
@@ -361,69 +147,86 @@ p {
             padding: 10px 15px;
         }
 
-       /* Improved media query for mobile devices */
-@media (max-width: 768px) {
-    .container {
-        width: 100%;
-        margin: 10px 0;
-        padding: 15px;
-        transform: none;
-    }
+        /* Responsive styles for phones */
+        @media only screen and (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
 
-    .timeline::after {
-        left: 20px;
-    }
+            h2 {
+                font-size: 22px;
+            }
 
-    .container.left, .container.right {
-        left: 20px;
-        transform: none;
-    }
+            p {
+                font-size: 16px;
+            }
 
-    .date, .date-right {
-        font-size: 14px;
-        padding: 5px;
-    }
+            .container {
+                width: 100%;
+                margin: 10px 0;
+                padding: 15px;
+                transform: none;
+            }
 
-    .date-right {
-        position: absolute;
-        top: 10px;
-        right: 10px; /* Adjust position for mobile */
-        left: auto; /* Remove any left positioning */
-        background-color: #ccc;
-        color: #1f1f1f;
-        border-radius: 50%;
-        border: 2px solid #ccc;
-    }
+            .timeline::after {
+                left: 20px;
+            }
 
-    .header-image {
-        width: 100%;
-        height: auto;
-    }
+            .container.left, .container.right {
+                left: 20px;
+                transform: none;
+                align-items: center;
+            }
 
-    h1 {
-        font-size: 28px;
-    }
+            .date, .date-right {
+                font-size: 14px;
+                padding: 5px;
+            }
 
-    h2 {
-        font-size: 24px;
-    }
+            .date-right {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                left: auto;
+            }
 
-    p {
-        font-size: 16px;
-    }
+            .header-image {
+                width: 100%;
+                height: auto;
+            }
 
-    .footer {
-        font-size: 14px;
-    }
+            h1 {
+                font-size: 28px;
+            }
 
-    .progress-container {
-        width: 100%;
-        margin: 10px 0;
-    }
-}
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .footer {
+                font-size: 14px;
+            }
+
+            .progress-container {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            main {
+                width: 90%;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 10px;
+            }
+
+            /* Overlay navigation menu */
+            
+        }
     </style>
-<
-
 </head>
 <body>
     <!-- Google tag (gtag.js) -->
@@ -461,7 +264,7 @@ p {
             </div>
         </div>
         <!-- Button to open the curtain menu (Initially hidden) -->
-        <span id="menuButton" onclick="openNav()" style="position: fixed; top: 10px; right: 10px; color: #e0e0e0;">☰ Åpne meny</span>
+        <span id="menuButton" onclick="openNav()" style="position: fixed; top: 10px; right: 10px; display: none;">☰ Åpne meny</span>
     </header>
 
 
@@ -471,8 +274,7 @@ p {
         <div class="centered-section">
             <div class="intro-text">
                 <h2 style="font-family: 'ModernTypewriter', sans-serif;">Den norske Språkrevulusjon</h2>
-                <p style="font-family: 'ModernTypewriter', sans-serif;">Denne delen av utstillingen utforsker vi språket i den samiske avisen *Waren Sardne* og ser nærmere på de historiske, kulturelle og praktiske forholdene som har formet språkbruken. Gjennom en dypere forståelse av hvordan fornorskning, språklig tilgjengelighet, mangel på et skriftspråk, og praktiske hensyn har påvirket både samisk og norsk, vil vi gi innsikt i hvorfor norsk spiller en viktig rolle i samisk media i dag. Vi skal gå gjennom fem hovedaspekter som forklarer samspillet mellom samisk og norsk språk i *Waren Sardne*, og hvordan dette reflekterer den større språklige situasjonen for samene i Norge</p>
-            </div>
+                <p style="font-family: 'ModernTypewriter', sans-serif;">Denne delen av utstillingen utforsker vi språket i den samiske avisen *Waren Sardne* og ser nærmere på de historiske, kulturelle og praktiske forholdene som har formet språkbruken. Gjennom en dypere forståelse av hvordan fornorskning, språklig tilgjengelighet, mangel på et skriftspråk, og praktiske hensyn har påvirket både samisk og norsk, vil vi gi innsikt i hvorfor norsk spiller en viktig rolle i samisk media i dag. Vi skal gå gjennom fem hovedaspekter som forklarer samspillet mellom samisk og norsk språk i *Waren Sardne*, og hvordan dette reflekterer den større språklige situasjonen for samene i Norge</p> </div>
             <audio id="sound1" src="ttsmaker-file-2024-9-14-18-57-25.mp3"></audio>
             <button class="les-opp-button" id="playButton1">les opp</button>
             <div class="audio-controls" id="controls1">
@@ -494,14 +296,14 @@ p {
                 <div class="content">
                     <h2 style="font-family: 'ModernTypewriter', Arial, sans-serif;">Historisk Undertrykkelse</h2>
                     <p>Fornorskningspolitikken som ble iverksatt fra 1800-tallet og langt ut på 1900-tallet, hadde som mål å assimilere samene og andre minoriteter til den norske kulturen og språket. Dette førte til at samisk språk, kultur og identitet ble kraftig undertrykt...</p>
-                    <audio id="sound1" src="ttsmaker-file-2024-9-14-18-57-25.mp3"></audio>
-                    <button class="les-opp-button" id="playButton1">les opp</button>
-                    <div class="audio-controls" id="controls1">
-                        <button id="pauseButton1">pause</button>
-                        <button id="stopButton1">stopp</button>
+                    <audio id="sound5" src="ttsmaker-file-2024-9-14-18-57-25.mp3"></audio>
+                    <button class="les-opp-button" id="playButton5">les opp</button>
+                    <div class="audio-controls" id="controls5">
+                        <button id="pauseButton5">pause</button>
+                        <button id="stopButton5">stopp</button>
                         <div class="progress-container">
-                            <input type="range" id="progress1" value="0" max="100" step="0.1">
-                            <span id="duration1">0:00 / 0:00</span>
+                            <input type="range" id="progress5" value="0" max="100" step="0.1">
+                            <span id="duration5">0:00 / 0:00</span>
                         </div>
                     </div>
                 </div>
@@ -601,6 +403,17 @@ p {
 
         let currentAudio = null;
 
+
+
+        window.onload = function() {
+    toggleNavbars();
+    hideAllAudioControls(); // Hide audio controls on page load
+};
+function hideAllAudioControls() {
+    const controls = document.querySelectorAll('.audio-controls');
+    controls.forEach(control => control.style.display = 'none');
+}
+
 function setupAudioHandlers(soundId, playButtonId, pauseButtonId, stopButtonId, controlsId, progressId, durationId) {
 const sound = document.getElementById(soundId);
 const playButton = document.getElementById(playButtonId);
@@ -664,6 +477,7 @@ setupAudioHandlers('sound3', 'playButton3', 'pauseButton3', 'stopButton3', 'cont
 setupAudioHandlers('sound4', 'playButton4', 'pauseButton4', 'stopButton4', 'controls4', 'progress4', 'duration4');
 setupAudioHandlers('sound5', 'playButton5', 'pauseButton5', 'stopButton5', 'controls5', 'progress5', 'duration5');
 setupAudioHandlers('sound6', 'playButton6', 'pauseButton6', 'stopButton6', 'controls6', 'progress6', 'duration6');
+
 
 </script>
 
