@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waren Sardne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="text-align: center;">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNT4N2C3NE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KNT4N2C3NE');
+    </script>
+
+    <style>
+        p {
+            font-size: 20px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+        @media only screen and (max-width: 768px) {
+            h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+
+    <header>
+        <img src="file.jpg" alt="Header Image" class="header-image">
+        <h1 id="mainTitle">Språket i Waren Sardne</h1>
+
+        <div class="navbar" id="oldNavbar">
+            <a href="Startside.html" id="nav1">Om språket i Waren Sardne</a>
+            <a href="Språkrevulusjon.html" id="nav2">Språkrevolusjonen</a>
+            <a href="Arkiv.html" id="nav3">Se på forskjelige Waren Sardne aviser</a>
+            <a href="Kilder.html" id="nav4">Kilder</a>
+        </div>
+
+        <!-- New Curtain Menu -->
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="Startside.html" id="overlayNav1">Om språket i Waren Sardne</a>
+                <a href="Språkrevulusjon.html" id="overlayNav2">Språkrevolusjonen</a>
+                <a href="Arkiv.html" id="overlayNav3">Se på forskjelige Waren Sardne aviser</a>
+                <a href="Kilder.html" id="overlayNav4">Kilder</a>
+            </div>
+        </div>
+
+        <span id="menuButton" onclick="openNav()" style="position: fixed; top: 10px; right: 10px; display: none;">☰ Åpne meny</span>
+    </header>
+
+    <button id="translateButton">Translate to English</button>
+
+    <main>
+        <section id="content">
+            <div class="centered-section">
+                <div class="intro-text">
+                    <h2 id="sectionTitle1">Utforsking av Språket i Waren Sardne</h2>
+                    <p id="sectionText1">Denne delen av utstillingen utforsker vi språket i den samiske avisen *Waren Sardne* ...</p>
+                </div>
+                <audio id="sound1" src="ttsmaker-file-2024-9-14-18-57-25.mp3"></audio>
+                <button class="les-opp-button" id="playButton1">les opp</button>
+                <div class="audio-controls" id="controls1">
+                    <button id="pauseButton1">pause</button>
+                    <button id="stopButton1">stopp</button>
+                    <div class="progress-container">
+                        <input type="range" id="progress1" value="0" max="100" step="0.1">
+                        <span id="duration1">0:00 / 0:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Similar content blocks for other sections -->
+        </section>
+    </main>
+
+    <footer>
+        <p id="footerText">&copy; [Waren Sardne] [2024]</p>
+    </footer>
+
+    <script>
+        // English translations for the page
+        const englishTexts = {
+            mainTitle: "The Language of Waren Sardne",
+            nav1: "About the Language of Waren Sardne",
+            nav2: "The Language Revolution",
+            nav3: "View Various Waren Sardne Newspapers",
+            nav4: "Sources",
+            sectionTitle1: "Exploring the Language of Waren Sardne",
+            sectionText1: "In this section, we explore the language of the Sami newspaper *Waren Sardne* ...",
+            footerText: "&copy; [Waren Sardne] [2024]"
+            overlayNav1:  "About the Language of Waren Sardne",
+            overlayNav2: "The Language Revolution",
+            overlayNav3 :"View Various Waren Sardne Newspapers",
+            overlayNav4: "Sources",
+
+        };
+
+        const englishAudioSources = {
+            sound1: "your-custom-audio-file1.mp3",
+            // Add the rest of your audio files for other sections here...
+        };
+
+        let isEnglish = false; // Track the language state
+
+        document.getElementById("translateButton").addEventListener("click", function() {
+            if (!isEnglish) {
+                // Change text to English
+                document.getElementById("mainTitle").textContent = englishTexts.mainTitle;
+                document.getElementById("nav1").textContent = englishTexts.nav1;
+                document.getElementById("nav2").textContent = englishTexts.nav2;
+                document.getElementById("nav3").textContent = englishTexts.nav3;
+                document.getElementById("nav4").textContent = englishTexts.nav4;
+                document.getElementById("sectionTitle1").textContent = englishTexts.sectionTitle1;
+                document.getElementById("sectionText1").textContent = englishTexts.sectionText1;
+                document.getElementById("footerText").textContent = englishTexts.footerText;
+
+                // Change audio to English/custom files
+                document.getElementById("sound1").src = englishAudioSources.sound1;
+                // Repeat for other audio elements...
+
+                isEnglish = true;
+                this.textContent = "Translate to Norwegian";
+            } else {
+                // Switch back to the original Norwegian content (if needed, restore Norwegian texts and audio)
+                location.reload(); // Reload the page to reset to Norwegian (simple approach)
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -5,71 +5,473 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waren Sardne</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body style="text-align: center;">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KNT4N2C3NE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <style>
+   body {
+    font-family: Arial, sans-serif;
+    color: #e0e0e0;
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+}
 
-  gtag('config', 'G-KNT4N2C3NE');
-</script>
+header {
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+}
 
-<style>
+h1 {
+    margin-top: 0;
+    font-size: 36px;
+}
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #2c2727;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.container {
+    padding: 20px;
+    position: relative;
+    border-radius: 8px;
+    background: #2c2c2c;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    width: calc(50% - 40px);
+    box-sizing: border-box;
+}
+
+.container::after {
+    padding: 20px;
+    content: "";
+    position: absolute;
+    top: 15px;
+    width: 0;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent #2c2c2c;
+}
+
+.left {
+    left: 0;
+    transform: translateX(-30px);
+}
+
+.right {
+    left: 50%;
+    transform: translateX(30px);
+}
+
+.date {
+    position: absolute;
+    top: 10px;
+    background-color: #ccc;
+    color: #1f1f1f;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #ccc;
+}
+
+.date-right {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    background-color: #ccc;
+    color: #1f1f1f;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #ccc;
+}
+
+h2 {
+    font-size: 28px;
+    color: #e0e0e0;
+}
+
+p {
+    font-size: 18px;
+    color: #d0d0d0;
+}
+
+.footer {
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.overlay-content {
+    position: relative;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay-content a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f1f1f1;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay-content a:hover {
+    color: #2196F3;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#oldNavbar {
+    display: none;
+}
+
+/* Responsive styles for phones */
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
     p {
-      font-size: 20px; /* increase font size to 24 pixels */
+        font-size: 16px;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .container.left, .container.right {
+        transform: translateX(0);
+    }
+
+    .timeline::after {
+        left: 10px;
+    }
+
+    .date, .date-right {
+        top: -10px;
+        right: auto;
+        left: 10px;
+    }
+
+    .overlay-content a {
+        font-size: 18px;
+    }
+
+    .audio-controls {
+        display: block;
+        width: 100%;
+    }
+
+    .progress-container {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    /* Adjust the menu button for mobile */
+    #menuButton {
+        font-size: 28px;
+    }
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #e0e0e0;
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 36px;
+        }
+
+        .header-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #2c2727;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .container {
+            padding: 20px;
+            position: relative;
+            border-radius: 8px;
+            background: #2c2c2c;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            width: calc(50% - 40px);
+            box-sizing: border-box;
+        }
+
+        .container.left {
+            left: 0;
+            transform: translateX(-30px);
+        }
+
+        .container.right {
+            left: 50%;
+            transform: translateX(30px);
+        }
+
+        .date, .date-right {
+            position: absolute;
+            top: 10px;
+            background-color: #ccc;
+            color: #1f1f1f;
+            padding: 10px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 16px;
+            border: 2px solid #ccc;
+        }
+
+        .date-right {
+            right: 18px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #e0e0e0;
+        }
+
+        p {
+            font-size: 18px;
+            color: #d0d0d0;
+        }
+
+        .footer {
+            padding: 20px;
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .overlay-content a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #f1f1f1;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay-content a:hover {
+            color: #2196F3;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 15px;
+        }
+
+       /* Improved media query for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+        transform: none;
+    }
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .container.left, .container.right {
+        left: 20px;
+        transform: none;
+    }
+
+    .date, .date-right {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .date-right {
+        position: absolute;
+        top: 10px;
+        right: 10px; /* Adjust position for mobile */
+        left: auto; /* Remove any left positioning */
+        background-color: #ccc;
+        color: #1f1f1f;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+    }
+
+    .header-image {
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 28px;
     }
 
     h2 {
-      font-size: 30px; /* increase font size to 24 pixels */
+        font-size: 24px;
     }
-  @media only screen and (max-width: 768px) {
-    h2 {
-      font-size: 25px; /* increase font size to 20 pixels for smaller screens */
+
+    p {
+        font-size: 16px;
     }
-  }
-</style>
 
-<header>
-    <img src="file.jpg" alt="Header Image" class="header-image">
-    <h1>Språket i Waren Sardne</h1>
+    .footer {
+        font-size: 14px;
+    }
 
-    <!-- Old Navbar (will be hidden on small screens) -->
-    <div class="navbar" id="oldNavbar">
-        <a href="Startside.html">Om språket i Waren Sardne</a>
-        <a href="Språkrevulusjon.html">Språkrevolusjonen</a>
-        <a href="Arkiv.html">Se på forskjelige Waren Sardne aviser</a>
-        <a href="Kilder.html">Kilder</a>
-    </div>  
+    .progress-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+    </style>
+<
 
-    <!-- New Curtain Menu -->
-    <div id="myNav" class="overlay">
-        <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+</head>
+<body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNT4N2C3NE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KNT4N2C3NE');
+    </script>
 
-        <!-- Overlay content -->
-        <div class="overlay-content">
+    <header>
+        <img src="file.jpg" alt="Header Image" class="header-image">
+        <h1>Språket i Waren Sardne</h1>
+
+        <!-- Old Navbar (will be hidden on small screens) -->
+        <div class="navbar" id="oldNavbar">
             <a href="Startside.html">Om språket i Waren Sardne</a>
             <a href="Språkrevulusjon.html">Språkrevolusjonen</a>
             <a href="Arkiv.html">Se på forskjelige Waren Sardne aviser</a>
             <a href="Kilder.html">Kilder</a>
+        </div>  
+
+        <!-- New Curtain Menu -->
+        <div id="myNav" class="overlay">
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <a href="Startside.html">Om språket i Waren Sardne</a>
+                <a href="Språkrevulusjon.html">Språkrevolusjonen</a>
+                <a href="Arkiv.html">Se på forskjelige Waren Sardne aviser</a>
+                <a href="Kilder.html">Kilder</a>
+            </div>
         </div>
-    </div>
-
-    <!-- Button to open the curtain menu (Initially hidden) -->
-<span id="menuButton" onclick="openNav()" style="position: fixed; top: 10px; right: 10px; display: none;">☰ Åpne meny</span>
-</header>
-
+        <!-- Button to open the curtain menu (Initially hidden) -->
+        <span id="menuButton" onclick="openNav()" style="position: fixed; top: 10px; right: 10px; color: #e0e0e0;">☰ Åpne meny</span>
+    </header>
 
 
 <main>
+
     <section id="content">
         <div class="centered-section">
             <div class="intro-text">
-                <h2 style="font-family: 'ModernTypewriter', sans-serif;">Språkrevolusjonen i waren sardne</h2>
-                <p style="font-family: 'ModernTypewriter', sans-serif;"></p>
+                <h2 style="font-family: 'ModernTypewriter', sans-serif;">Den norske Språkrevulusjon</h2>
+                <p style="font-family: 'ModernTypewriter', sans-serif;">Denne delen av utstillingen utforsker vi språket i den samiske avisen *Waren Sardne* og ser nærmere på de historiske, kulturelle og praktiske forholdene som har formet språkbruken. Gjennom en dypere forståelse av hvordan fornorskning, språklig tilgjengelighet, mangel på et skriftspråk, og praktiske hensyn har påvirket både samisk og norsk, vil vi gi innsikt i hvorfor norsk spiller en viktig rolle i samisk media i dag. Vi skal gå gjennom fem hovedaspekter som forklarer samspillet mellom samisk og norsk språk i *Waren Sardne*, og hvordan dette reflekterer den større språklige situasjonen for samene i Norge</p>
             </div>
             <audio id="sound1" src="ttsmaker-file-2024-9-14-18-57-25.mp3"></audio>
             <button class="les-opp-button" id="playButton1">les opp</button>
@@ -82,133 +484,122 @@
                 </div>
             </div>
         </div>
-        <div class="centered-section">
-
-            <div class="section-content">
-                <h3 style="font-family: 'ModernTypewriter', sans-serif;">1. Historisk Undertrykkelse</h3>
-                <p style="font-family: 'ModernTypewriter', sans-serif;"></p>
-                <audio id="sound2" src="ttsmaker-file-2024-9-14-18-57-51.mp3"></audio>
-                <button class="les-opp-button" id="playButton2">les opp</button>
-                <div class="audio-controls" id="controls2">
-                    <button id="pauseButton2">pause</button>
-                    <button id="stopButton2">stopp</button>
-                    <div class="progress-container">
-                        <input type="range" id="progress2" value="0" max="100" step="0.1">
-                        <span id="duration2">0:00 / 0:00</span>
-                    </div>
-                </div>
-            </div>
-
-            <img src="DSC00825.JPG" alt="Image related to the topic" class="section-image">
-
-            <div class="section-content">
-                <h3 style="font-family: 'ModernTypewriter', sans-serif;">2. Tilgjengelighet</h3>
-                <p style="font-family: 'ModernTypewriter', sans-serif;"></p>
-                <audio id="sound3" src="ttsmaker-file-2024-9-14-18-58-16.mp3"></audio>
-                <button class="les-opp-button" id="playButton3">les opp</button>
-                <div class="audio-controls" id="controls3">
-                    <button id="pauseButton3">pause</button>
-                    <button id="stopButton3">stopp</button>
-                    <div class="progress-container">
-                        <input type="range" id="progress3" value="0" max="100" step="0.1">
-                        <span id="duration3">0:00 / 0:00</span>
-                    </div>
-                </div>
-            </div>
-            <img src="DSC00871.JPG" alt="Image related to the topic" class="section-image">
-            
-            <div class="section-content">
-                <h3 style="font-family: 'ModernTypewriter', sans-serif;">3. Mangel på Skriftspråk</h3>
-                <p style="font-family: 'ModernTypewriter', sans-serif;"></p>
-                <audio id="sound4" src="ttsmaker-file-2024-9-14-18-58-38.mp3"></audio>
-                <button class="les-opp-button" id="playButton4">les opp</button>
-                <div class="audio-controls" id="controls4">
-                    <button id="pauseButton4">pause</button>
-                    <button id="stopButton4">stopp</button>
-                    <div class="progress-container">
-                        <input type="range" id="progress4" value="0" max="100" step="0.1">
-                        <span id="duration4">0:00 / 0:00</span>
-                    </div>
-                </div>
-            </div>
-            <img src="DSC00867.JPG" alt="Image related to the topic" class="section-image">
-            
-            <div class="section-content">
-                <h3 style="font-family: 'ModernTypewriter', sans-serif;">4. Praktiske Hensyn</h3>
-                <p style="font-family: 'ModernTypewriter', sans-serif;"></p>
-                <audio id="sound5" src="ttsmaker-file-2024-9-14-19-2-44.mp3"></audio>
-                <button class="les-opp-button" id="playButton5">les opp</button>
-                <div class="audio-controls" id="controls5">
-                    <button id="pauseButton5">pause</button>
-                    <button id="stopButton5">stopp</button>
-                    <div class="progress-container">
-                        <input type="range" id="progress5" value="0" max="100" step="0.1">
-                        <span id="duration5">0:00 / 0:00</span>
-                    </div>
-                </div>
-            </div>
-
-            <img src="DSC00852.JPG" alt="Image related to the topic" class="section-image">
-           
-            <div class="section-content">
-                <h3 style="font-family: 'ModernTypewriter', sans-serif;">5. Et gammelt språk</h3>
-                <p style="font-family: 'ModernTypewriter', sans-serif;"> </p>
-                </p>
-                <audio id="sound6" src="ttsmaker-file-2024-9-14-18-59-22.mp3"></audio>
-                <button class="les-opp-button" id="playButton6">les opp</button>
-                <div class="audio-controls" id="controls6">
-                    <button id="pauseButton6">pause</button>
-                    <button id="stopButton6">stopp</button>
-                    <div class="progress-container">
-                        <input type="range" id="progress6" value="0" max="100" step="0.1">
-                        <span id="duration6">0:00 / 0:00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-</section>
-
-
-
+  </section>
 </main>
 
-<footer>
-    <p style="font-family: 'ModernTypewriter', sans-serif;">&copy; [Waren Sardne] [2024]</p>
-</footer>
+    <main>
+    <section class="timeline">
+            <div class="container left">
+                <div class="date-right">1</div>
+                <div class="content">
+                    <h2 style="font-family: 'ModernTypewriter', Arial, sans-serif;">Historisk Undertrykkelse</h2>
+                    <p>Fornorskningspolitikken som ble iverksatt fra 1800-tallet og langt ut på 1900-tallet, hadde som mål å assimilere samene og andre minoriteter til den norske kulturen og språket. Dette førte til at samisk språk, kultur og identitet ble kraftig undertrykt...</p>
+                    <audio id="sound1" src="ttsmaker-file-2024-9-14-18-57-25.mp3"></audio>
+                    <button class="les-opp-button" id="playButton1">les opp</button>
+                    <div class="audio-controls" id="controls1">
+                        <button id="pauseButton1">pause</button>
+                        <button id="stopButton1">stopp</button>
+                        <div class="progress-container">
+                            <input type="range" id="progress1" value="0" max="100" step="0.1">
+                            <span id="duration1">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<script>
-    /* Open the curtain menu */
-    function openNav() {
-        document.getElementById("myNav").style.width = "100%";
-    }
+            <div class="container right">
+                <div class="date">2</div>
+                <div class="content">
+                    <h2>Tilgjengelighet</h2>
+                    <p>Norsk brukes i mange samiske medier for å nå et bredere publikum. Dette inkluderer samer som på grunn av fornorskningen har mistet tilknytningen til det samiske språket...</p>
+                    <audio id="sound2" src="ttsmaker-file-2024-9-14-18-58-34.mp3"></audio>
+                    <button class="les-opp-button" id="playButton2">les opp</button>
+                    <div class="audio-controls" id="controls2">
+                        <button id="pauseButton2">pause</button>
+                        <button id="stopButton2">stopp</button>
+                        <div class="progress-container">
+                            <input type="range" id="progress2" value="0" max="100" step="0.1">
+                            <span id="duration2">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    /* Close the curtain menu */
-    function closeNav() {
-        document.getElementById("myNav").style.width = "0%";
-    }
+            <div class="container left">
+                <div class="date-right">3</div>
+                <div class="content">
+                    <h2>Språklige Forandringer</h2>
+                    <p>Som et resultat av fornorskningspolitikken ble mange samiske språk i dag betraktet som truet. Hovedsakelig fordi det ikke ble tilrettelagt for samiske språk i offentlige tjenester...</p>
+                    <audio id="sound3" src="ttsmaker-file-2024-9-14-18-58-34.mp3"></audio>
+                    <button class="les-opp-button" id="playButton3">les opp</button>
+                    <div class="audio-controls" id="controls3">
+                        <button id="pauseButton3">pause</button>
+                        <button id="stopButton3">stopp</button>
+                        <div class="progress-container">
+                            <input type="range" id="progress3" value="0" max="100" step="0.1">
+                            <span id="duration3">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    /* Function to toggle navbars based on screen size */
-    function toggleNavbars() {
-        const width = window.innerWidth;
-        const oldNavbar = document.getElementById('oldNavbar');
-        const menuButton = document.getElementById('menuButton');
+            <div class="container right">
+                <div class="date">4</div>
+                <div class="content">
+                    <h2>Moderne Utvikling</h2>
+                    <p>I dag ser vi en økt bevissthet og innsats for å revitalisere samiske språk gjennom utdanning, helsevesen og offentlige tjenester...</p>
+                    <audio id="sound4" src="ttsmaker-file-2024-9-14-18-58-34.mp3"></audio>
+                    <button class="les-opp-button" id="playButton4">les opp</button>
+                    <div class="audio-controls" id="controls4">
+                        <button id="pauseButton4">pause</button>
+                        <button id="stopButton4">stopp</button>
+                        <div class="progress-container">
+                            <input type="range" id="progress4" value="0" max="100" step="0.1">
+                            <span id="duration4">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+        </section>
+    </main>
 
-        if (width <= 768) {
-            oldNavbar.style.display = 'none';
-            menuButton.style.display = 'inline';
-        } else {
-            oldNavbar.style.display = 'block';
-            menuButton.style.display = 'none';
-            closeNav();
+    <footer class="footer">
+        <p>&copy; 2024 Waren Sardne. All rights reserved.</p>
+    </footer>
+
+    <script>
+        
+            /* Open the curtain menu */
+            function openNav() {
+            document.getElementById("myNav").style.width = "100%";
         }
-    }
+    
+        /* Close the curtain menu */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
 
-    window.onload = toggleNavbars;
-    window.onresize = toggleNavbars;
+        /* Function to toggle navbars based on screen size */
+        function toggleNavbars() {
+            const width = window.innerWidth;
+            const oldNavbar = document.getElementById('oldNavbar');
+            const menuButton = document.getElementById('menuButton');
+    
+            if (width <= 768) {
+                oldNavbar.style.display = 'none';
+                menuButton.style.display = 'inline';
+            } else {
+                oldNavbar.style.display = 'block';
+                menuButton.style.display = 'none';
+                closeNav();
+            }
+        }
+
+        window.onload = toggleNavbars;
+        window.onresize = toggleNavbars
 
 
-    let currentAudio = null;
+        let currentAudio = null;
 
 function setupAudioHandlers(soundId, playButtonId, pauseButtonId, stopButtonId, controlsId, progressId, durationId) {
 const sound = document.getElementById(soundId);
@@ -278,3 +669,5 @@ setupAudioHandlers('sound6', 'playButton6', 'pauseButton6', 'stopButton6', 'cont
 
 </body>
 </html>
+
+ 
