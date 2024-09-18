@@ -534,7 +534,7 @@ gallery-container {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.9);
@@ -545,10 +545,13 @@ gallery-container {
 /* Overlay content */
 .overlay-content {
   position: relative;
+
   top: 25%;
   width: 100%;
   text-align: center;
   margin-top: 30px;
+  padding-top:10px;
+  padding-bottom:10px
 }
 
 /* Links inside overlay */
@@ -736,7 +739,7 @@ button {
   border-radius: 5px; /* Optional: Rounded corners */
   padding: 5px; /* Small padding */
   font-size: 14px; /* Smaller font size */
-  z-index: 1; /* Ensure it's above other content */
+  z-index: 2; /* Ensure it's above other content */
   cursor: pointer; /* Show pointer on hover */
   transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition effect */
 
